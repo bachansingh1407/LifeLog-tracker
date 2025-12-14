@@ -664,11 +664,11 @@ export default function Settings() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                    <button className="px-4 py-1.5 text-sm bg-gray-500 text-white rounded-lg hover:bg-purple-700 transition">
+                    <button className="px-4 py-2 text-sm bg-gray-500 text-white rounded-lg hover:bg-purple-700 transition">
                         Cancel
                     </button>
-                    <button className="px-4 py-1.5 text-sm bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
-                        Sve changes
+                    <button className="px-4 py-2 text-sm bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
+                        Save changes
                     </button>
                 </div>
             </div>

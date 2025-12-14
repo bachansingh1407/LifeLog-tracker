@@ -148,6 +148,50 @@ export default function Profile() {
         }
     ];
 
+const [savedInsights, setSavedInsights] = useState([
+        {
+            id: 1,
+            date: "Jan 22, 2024",
+            insight: "I do my best work late evening when distractions are low.",
+            decision: "Schedule deep work after 8 PM",
+            tags: ["productivity", "timing"],
+            mood: "focused"
+        },
+        {
+            id: 2,
+            date: "Jan 19, 2024",
+            insight: "Too many goals at once reduce consistency.",
+            decision: "Limit active goals to 3",
+            tags: ["goals", "focus"],
+            mood: "reflective"
+        },
+        {
+            id: 3,
+            date: "Jan 18, 2024",
+            insight: "Morning meditation improves my focus throughout the day.",
+            decision: "Keep 10-minute morning meditation routine",
+            tags: ["wellness", "routine"],
+            mood: "balanced"
+        },
+        {
+            id: 4,
+            date: "Jan 15, 2024",
+            insight: "Breaking tasks into smaller chunks makes them less overwhelming.",
+            decision: "Use Pomodoro technique for complex tasks",
+            tags: ["productivity", "method"],
+            mood: "productive"
+        },
+    ]);
+     const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const today = new Date();
+        const yesterday = new Date(today);
+        yesterday.setDate(yesterday.getDate() - 1);
+
+        if (date.toDateString() === today.toDateString()) return "Today";
+        if (date.toDateString() === yesterday.toDateString()) return "Yesterday";
+        return dateString;
+    };
 
     return (
         <div className="min-h-screen">
@@ -188,18 +232,18 @@ export default function Profile() {
                             </div>
 
                             {/* Personal Info */}
-                            <div className="space-y-4">
+                            <div className="space-y-2">
                                 <div className="flex items-center gap-3 text-sm">
                                     <LuMail className="text-gray-400" />
-                                    <span className="text-gray-700">{profile.email}</span>
+                                    <span className="text-gray-600">{profile.email}</span>
                                 </div>
                                 <div className="flex items-center gap-3 text-sm">
                                     <LuMapPin className="text-gray-400" />
-                                    <span className="text-gray-700">{profile.location}</span>
+                                    <span className="text-gray-600">{profile.location}</span>
                                 </div>
                                 <div className="flex items-center gap-3 text-sm">
                                     <LuCalendar className="text-gray-400" />
-                                    <span className="text-gray-700">Joined {profile.joinedDate}</span>
+                                    <span className="text-gray-600">Joined {profile.joinedDate}</span>
                                 </div>
                             </div>
                         </div>
@@ -231,7 +275,7 @@ export default function Profile() {
                     {/* Preferences */}
                     <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
                         <h3 className="font-semibold text-gray-900 mb-4">Personal Patterns</h3>
-                        <div className="space-y-3">
+                        <div>
                             {Object.entries(preferences).map(([key, value]) => (
                                 <div key={key} className="flex justify-between items-center py-2">
                                     <span className="text-sm text-gray-600">
@@ -273,7 +317,7 @@ export default function Profile() {
                         </div>
 
                         {/* Tab Content */}
-                        <div className="p-6">
+                        <div className={`${activeTab === "insights" ? "" : "p-6"}`}>
                             {/* Overview Tab */}
                             {activeTab === "overview" && (
                                 <div className="space-y-6">
@@ -492,7 +536,7 @@ export default function Profile() {
                                                             {ach.description}
                                                         </div>
 
-                                                       
+
 
                                                         {/* Footer */}
                                                         <div className="flex justify-between text-[11px] mt-1">
@@ -533,49 +577,47 @@ export default function Profile() {
                                         </div>
                                     </div> */}
 
-                                    <div className="space-y-4">
-                                        <div className="p-4 border bg-white hover:shadow border-gray-200 rounded-lg">
-                                            <div className="flex items-start gap-3">
-                                                <LuZap className="text-amber-500 mt-1" />
-                                                <div>
-                                                    <div className="font-medium text-gray-900 mb-1">Energy Patterns</div>
-                                                    <div className="text-sm text-gray-600">
-                                                        Your energy peaks in the morning. Schedule important tasks before noon.
-                                                    </div>
+                                    <div className="space-y-4 p-4 max-h-[750px] overflow-y-auto">
+                                        {savedInsights.map((item) => (
+                                            <div
+                                                key={item.id}
+                                                className="p-4 border border-gray-200 rounded-lg hover:border-gray-300 transition bg-white"
+                                            >
+                                                <div className="flex items-center justify-between mb-3">
+                                                    <span className="text-xs font-medium text-gray-400">
+                                                        {formatDate(item.date)}
+                                                    </span>
+                                                    {item.tags && item.tags.length > 0 && (
+                                                        <span className="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded">
+                                                            {item.tags[0]}
+                                                        </span>
+                                                    )}
                                                 </div>
-                                            </div>
-                                        </div>
 
-                                        <div className="p-4 border bg-white hover:shadow border-gray-200 rounded-lg">
-                                            <div className="flex items-start gap-3">
-                                                <LuHeart className="text-rose-500 mt-1" />
-                                                <div>
-                                                    <div className="font-medium text-gray-900 mb-1">Consistency Score</div>
-                                                    <div className="text-sm text-gray-600">
-                                                        Your consistency has improved by 24% this month. Keep going!
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                <p className="text-sm text-gray-700 mb-3 leading-relaxed">
+                                                    {item.insight}
+                                                </p>
 
-                                        <div className="p-4 border bg-white hover:shadow border-gray-200 rounded-lg">
-                                            <div className="flex items-start gap-3">
-                                                <LuBookOpen className="text-blue-500 mt-1" />
-                                                <div>
-                                                    <div className="font-medium text-gray-900 mb-1">Learning Pace</div>
-                                                    <div className="text-sm text-gray-600">
-                                                        You complete learning goals 30% faster on weekends.
+                                                {item.decision && (
+                                                    <div className="p-3 bg-emerald-50 border border-emerald-100 rounded-lg">
+                                                        <div className="flex items-start gap-2">
+                                                            <LuTarget className="text-emerald-600 mt-0.5 flex-shrink-0" />
+                                                            <div>
+                                                                <div className="text-xs font-medium text-emerald-700 mb-1">Action Taken</div>
+                                                                <div className="text-sm text-emerald-800">{item.decision}</div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                )}
                                             </div>
-                                        </div>
+                                        ))}
                                     </div>
                                 </div>
                             )}
                         </div>
                     </div>
 
-                   
+
                 </div>
             </div>
         </div>
