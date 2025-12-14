@@ -29,3 +29,66 @@ body {
 a{
   text-decoration: none;
 }
+
+
+/* Weekday Header Row (Sun–Sat) */
+.fc .fc-col-header-cell {
+  background: #f8fafc !important;         /* soft background */
+  padding: 14px 0 !important;             /* bigger padding */
+  font-weight: 600;
+  font-size: 14px;
+  color: #1e293b;                          /* dark text */
+  border-right: 1px solid #e5e7eb !important;
+}
+/* Calender Title */
+.fc .fc-toolbar-title{
+  font-size: 16px !important;
+  font-weight: 600;
+}
+/* Calender Today Button */
+.fc .fc-today-button{
+  background: none !important;
+  color: #8518df !important;
+  padding: 0 !important;
+  border:unset !important;
+  text-transform: capitalize;
+  outline: none !important;
+}
+/* Cander Left Right Button */
+.fc .fc-header-toolbar{
+  padding-top: 10px;
+}
+.fc .fc-prev-button{
+  background-color:#ad46ff !important;
+  padding: 4px 6px !important;
+  font-size: 14px !important;
+  border:none !important;
+}
+.fc .fc-next-button{
+  background-color: #ad46ff !important;
+  padding: 4px 6px !important;
+  font-size: 14px !important;
+  border:none !important;
+}
+/* Remove last border */
+.fc .fc-col-header-cell:last-child {
+  border-right: none !important;
+}
+
+/* Give the whole top header a rounded shape */
+.fc-theme-standard .fc-scrollgrid {
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+/* Optional: hover effect on days */
+.fc .fc-col-header-cell:hover {
+  background: #eef6ff !important;
+  color: #ad46ff !important;
+  cursor: pointer;
+}
+
+/* Improve borders inside month grid */
+.fc .fc-daygrid-day {
+  border: 1px solid #f1f5f9 !important;
+}

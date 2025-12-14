@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
+import AppLayout from "./components/layout/AppLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,8 +21,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Workflow Application",
-  description: "Full Stack Developer (MERN)",
+  title: "LifeLog",
+  description: "Personal growth and productivity tracker",
 };
 
 export default function RootLayout({ children }) {
@@ -35,7 +36,7 @@ export default function RootLayout({ children }) {
           antialiased
         `}
       >
-        {children}
+        <AppLayout>{children}</AppLayout>
       </body>
     </html>
   );
