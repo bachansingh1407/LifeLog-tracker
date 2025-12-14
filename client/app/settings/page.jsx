@@ -618,7 +618,7 @@ export default function Settings() {
                 </div>
             </div>
 
-            <div className="border-t pt-6">
+            <div className="border-t border-gray-200 pt-6">
                 <h4 className="font-semibold text-gray-700 mb-4">Sessions</h4>
                 <div className="space-y-3">
                     <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">

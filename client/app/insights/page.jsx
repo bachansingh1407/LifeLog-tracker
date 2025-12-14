@@ -117,9 +117,9 @@ export default function Insights() {
                 </button> */}
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-9 gap-6">
                 {/* Left: Today's Reflection */}
-                <div className="lg:col-span-2 space-y-6">
+                <div className="lg:col-span-5 space-y-6">
                     {/* Today's Insight */}
                     <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
                         <div className="p-6 border-b border-gray-100">
@@ -145,7 +145,7 @@ export default function Insights() {
                                         onChange={(e) => setTodayInsight(e.target.value)}
                                         placeholder="I noticed that I work better when..."
                                         rows={4}
-                                        className="w-full p-4 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+                                        className="w-full p-2 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
                                     />
                                     <div className="text-xs text-gray-400 mt-2">
                                         Tip: Be specific about patterns or behaviors you observed
@@ -160,7 +160,7 @@ export default function Insights() {
                                         value={decision}
                                         onChange={(e) => setDecision(e.target.value)}
                                         placeholder="Based on this, I will..."
-                                        className="w-full p-4 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+                                        className="w-full p-2 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
                                     />
                                     <div className="text-xs text-gray-400 mt-2">
                                         What will you do differently tomorrow?
@@ -213,7 +213,7 @@ export default function Insights() {
                 </div>
 
                 {/* Right: Insight History */}
-                <div className="space-y-6">
+                <div className="lg:col-span-4 space-y-6">
                     {/* History Header */}
                     <div className="bg-white rounded-xl border border-gray-200 p-6">
                         <div className="flex items-center justify-between mb-6">
@@ -262,7 +262,7 @@ export default function Insights() {
 
                         {/* Insights List */}
                         {savedInsights.length > 0 ? (
-                            <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2">
+                            <div className="space-y-4 max-h-[700px] overflow-y-auto pr-2">
                                 {savedInsights.map((item) => (
                                     <div
                                         key={item.id}
@@ -316,27 +316,7 @@ export default function Insights() {
                         )}
                     </div>
 
-                    {/* Quick Stats */}
-                    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 text-white">
-                        <h4 className="font-medium mb-4 flex items-center gap-2">
-                            <LuTrendingUp />
-                            Insight Impact
-                        </h4>
-                        <div className="space-y-4">
-                            <div>
-                                <div className="text-xs text-gray-300 mb-1">Most Common Theme</div>
-                                <div className="text-lg font-semibold">Productivity</div>
-                            </div>
-                            <div>
-                                <div className="text-xs text-gray-300 mb-1">Average Insights/Month</div>
-                                <div className="text-lg font-semibold">12.5</div>
-                            </div>
-                            <button className="w-full flex items-center justify-between mt-4 p-3 bg-white/10 rounded-lg hover:bg-white/15 transition">
-                                <span className="text-sm">View Detailed Analytics</span>
-                                <LuChevronRight />
-                            </button>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
 
