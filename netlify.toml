@@ -1,6 +1,7 @@
 [build]
-  base = "client"
-  command = "npm run build"
+  base = "client"               # This tells Netlify to run commands from the 'client' folder
+  command = "npm install && npm run build"  # Always install dependencies before building
+  publish = "client/.next"      # For Netlify to know where the output is
 
 [build.environment]
   NODE_VERSION = "18"
