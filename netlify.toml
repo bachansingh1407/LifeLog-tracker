@@ -1,0 +1,12 @@
+# netlify.toml — FINAL WORKING CONFIG FOR NEXT.JS (APP ROUTER)
+
+[build]
+  base = "client"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
