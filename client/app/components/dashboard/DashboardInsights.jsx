@@ -175,7 +175,7 @@ export default function DashboardInsights() {
                         </span>
                         <div className="flex flex-col">
                             <h3 className="text-gray-600 text-sm font-semibold">
-                                Today&apos;s Tasks
+                                Today's Tasks
                             </h3>
                             <p className="text-gray-400 text-xs">
                                 {todayTasks.length} Tasks Today |{" "}
@@ -247,7 +247,7 @@ export default function DashboardInsights() {
                             <h3 className="text-gray-600 text-sm font-semibold">
                                 Upcoming Events
                             </h3>
-                            <span className="text-gray-400 text-xs">Today&apos;s schedule</span>
+                            <span className="text-gray-400 text-xs">Today's schedule</span>
                         </div>
                     </div>
                     <Link href="/" className="text-xs text-purple-500 hover:underline">
