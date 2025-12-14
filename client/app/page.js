@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import DashboardInsights from "./components/dashboard/DashboardInsights";
 import DashboardNotes from "./components/dashboard/DashboardNotes";
@@ -24,7 +24,7 @@ export default function Home() {
         {/* Welcome things */}
         <div className="flex flex-col">
           <h1 className="text-gray-700 font-medium text-lg">Welcome, {user.name}</h1>
-          <span className="text-gray-500 text-sm">Here's your productivity overview for today</span>
+          <span className="text-gray-500 text-sm">Here&apos;s your productivity overview for today</span>
         </div>
 
         {/* Date */}

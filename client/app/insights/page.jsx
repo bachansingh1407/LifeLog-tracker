@@ -128,7 +128,7 @@ export default function Insights() {
                                     <LuPen className="text-indigo-600" />
                                 </div>
                                 <div>
-                                    <h3 className="font-semibold text-gray-900">Today's Reflection</h3>
+                                    <h3 className="font-semibold text-gray-900">Today&apos;s Reflection</h3>
                                     <p className="text-sm text-gray-500">What did you learn about yourself today?</p>
                                 </div>
                             </div>
