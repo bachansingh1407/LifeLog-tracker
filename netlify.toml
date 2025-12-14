@@ -1,22 +1,12 @@
-# netlify.toml
+# netlify.toml — FINAL WORKING CONFIG FOR NEXT.JS (APP ROUTER)
+
 [build]
   base = "client"
-  publish = ".next"
-  command = "npm install && npm run build"
+  command = "npm run build"
 
 [build.environment]
   NODE_VERSION = "18"
-  NPM_FLAGS = "--legacy-peer-deps"
   NEXT_TELEMETRY_DISABLED = "1"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
