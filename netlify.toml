@@ -1,8 +1,8 @@
 # netlify.toml
 [build]
   base = "client"
-  publish = "client/.next"
-  command = "cd client && npm install && npm run build"
+  publish = ".next"
+  command = "npm install && npm run build"
 
 [build.environment]
   NODE_VERSION = "18"
